@@ -2,7 +2,13 @@ import com.example.Animal;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class AnimalGetFamilyTest {
+public class AnimalTest {
+
+    @Test(expected = Exception.class)
+    public void shouldBeException() throws Exception {
+        Animal animal = new Animal();
+        animal.getFood("Муравей");
+    }
 
     @Test
     public void shouldBeFamiliesMessage() {

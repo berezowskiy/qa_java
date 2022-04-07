@@ -9,10 +9,18 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CatGetFoodTest {
+public class CatTest {
 
     @Mock
     Feline feline;
+
+    @Test
+    public void shouldMeow() {
+        Cat cat = new Cat(new Feline());
+        String expected = "Мяу";
+        String actual = cat.getSound();
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void shouldGetFelineFood() throws Exception {
