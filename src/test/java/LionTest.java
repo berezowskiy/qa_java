@@ -43,8 +43,9 @@ public class LionTest {
     @Test
     public void shouldReturnFoodForPredator() throws Exception {
         Lion lion = new Lion(feline, "Самец");
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        List<String> predatorMeals = List.of("Животные", "Птицы", "Рыба");
+        Mockito.when(feline.getFood("Хищник")).thenReturn(predatorMeals);
+        List<String> expected = predatorMeals;
         List<String> actual = lion.getFood();
         assertEquals(expected, actual);
     }
